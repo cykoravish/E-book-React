@@ -46,8 +46,12 @@ const LoginPage = () => {
         <CardHeader>
           <CardTitle className="text-2xl">Login</CardTitle>
           <CardDescription>
-            Enter your email below to login to your account.
-            {mutation.isPending && <div>Loading...</div>}
+            Enter your email below to login to your account. <br />
+            {mutation.isError && (
+              <span className="text-red-500 text-sm">
+                {mutation.error.message}
+              </span>
+            )}
           </CardDescription>
         </CardHeader>
         <CardContent className="grid gap-4">
@@ -68,12 +72,15 @@ const LoginPage = () => {
         </CardContent>
         <CardFooter>
           <div className="w-full">
-            <Button onClick={handleLoginSubmit} className="w-full" disabled={mutation.isPending}>
+            <Button
+              onClick={handleLoginSubmit}
+              className="w-full"
+              disabled={mutation.isPending}
+            >
               {mutation.isPending && (
                 <LoaderPinwheel className="animate-spin" />
               )}
               <span className="ml-2">Sign In</span>
-
             </Button>
             <div className="mt-4 text-center text-sm">
               Don't Have An Account ?
