@@ -41,7 +41,7 @@ const LoginPage = () => {
             <Button className="w-full">Sign In</Button>
             <div className="mt-4 text-center text-sm">
               Don't Have An Account ?
-              <Link to="/register" className="underline">
+              <Link to="/auth/register" className="underline">
                 Sign Up
               </Link>
             </div>
