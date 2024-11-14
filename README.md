@@ -1,50 +1,80 @@
-# React + TypeScript + Vite
+# eBook Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a modern, user-friendly eBook application built with [React](https://reactjs.org/), [Vite](https://vitejs.dev/), and [ShadCN](https://shadcn.dev/). The application allows users to browse, read, and manage eBooks with an intuitive interface and responsive design.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Folder Structure](#folder-structure)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- 📚 **Browse eBooks**: Easily search and browse through a wide collection of eBooks.
+- 📖 **Read Online**: Access eBooks directly from the app with a clean and optimized reader interface.
+- 📌 **Bookmark Pages**: Bookmark pages for quick reference and resume reading where you left off.
+- 🔍 **Search Functionality**: Search for eBooks by title, author, or genre.
+- 🌐 **Responsive Design**: Built with a responsive layout for smooth performance on both desktop and mobile devices.
 
-- Configure the top-level `parserOptions` property like this:
+## Tech Stack
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Frontend**: React, Vite
+- **UI Library**: ShadCN
+- **Styling**: Tailwind CSS
+- **State Management**: Zustand
+- **Icons**: [React Icons](https://react-icons.github.io/react-icons/)
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Installation
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+To get started with this project, clone the repository and follow these steps:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. **Clone the repo:**
+    ```bash
+    git clone https://github.com/cykoravish/E-book-React.git
+    cd E-book-React
+    ```
+
+2. **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+3. **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+
+4. **Build for production:**
+    ```bash
+    npm run build
+    ```
+
+## Usage
+
+1. After starting the application, open [http://localhost:3000](http://localhost:3000) in your browser.
+2. Explore the eBook collection, search for your favorite titles, and start reading!
+3. You can also bookmark pages to pick up right where you left off.
+
+## Folder Structure
+
+Here's an overview of the main project structure:
+
+```plaintext
+├── public
+│   └── favicon.ico
+├── src
+│   ├── assets          # Images, icons, and other static assets
+│   ├── components      # Reusable UI components
+│   ├── pages           # Main pages like Home, Book Details, etc.
+│   ├── context         # Context for state management
+│   ├── hooks           # Custom React hooks
+│   ├── App.jsx         # Main app component
+│   └── main.jsx        # Entry point for React and Vite
+├── .gitignore
+├── README.md
+├── package.json
+└── vite.config.js
